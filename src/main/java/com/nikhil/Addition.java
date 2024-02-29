@@ -18,22 +18,20 @@ public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOExcep
 	int i= Integer.parseInt(req.getParameter("n1"));
 	int j= Integer.parseInt(req.getParameter("n2"));
 	String l=req.getParameter("text");
-	PrintWriter out=res.getWriter();
-	out.println(l);
+	
+//	PrintWriter out=res.getWriter();
+//	out.println();
 
 	
 	int k=i+j;
 	
+	k=k*k;
 	
-	//code for the second servlet calling which is square
-//	k=k*k;
+	req.setAttribute("k", k);
 	
 	
-//	req.setAttribute("k", k);
-//	
-//	
-//	RequestDispatcher re=req.getRequestDispatcher("two");
-//	re.forward(req, res);
+	RequestDispatcher re=req.getRequestDispatcher("two");
+	re.forward(req, res);
 
 
 }
